@@ -1,9 +1,9 @@
 const Keypad = (props) => {
   return(
-    <>
+    <div className="keypad">
       <button name="(" onClick={props.onClick}>(</button>
-      <button name="CE" onClick={props.onClick}>CE</button>
       <button name=")" onClick={props.onClick}>)</button>
+      <button name="CE" onClick={props.onClick}>DE</button>
       <button name="C" onClick={props.onClick}>C</button><br/>
 
 
@@ -28,7 +28,7 @@ const Keypad = (props) => {
       <button name="0" onClick={props.onClick}>0</button>
       <button name="=" onClick={props.onSubmit}>=</button>
       <button name="/" onClick={props.onClick}>÷</button><br/>
-    </>
+    </div>
   )
 }
 

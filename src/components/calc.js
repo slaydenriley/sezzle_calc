@@ -1,27 +1,30 @@
 import React from 'react'
-import Logs from './logs'
 import Keypad from './keypad'
 
 class Calc extends React.Component {
   state = {
     operation: "",
-    saved: []
+    last_op: ""
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
     try {
-    let toSave = this.state.operation
-    let total = eval(toSave)
-    this.setState({
-      saved: this.state.saved.concat(toSave + `=${total}`),
-      operation: total})
+      let operation = this.state.operation
+      let total = eval(operation)
+      this.addLog(operation + `=${total}`)
+      this.setState({
+        operation: total})
     }
     catch {
       this.setState({
         operation: "Oops, error!"
       })
     }
+  }
+
+  addLog = (formData) => {
+
   }
 
   handleChange = (e) => {
@@ -32,11 +35,12 @@ class Calc extends React.Component {
 
   handleOperatorChange = (e) => {
     if (e.target.name === "C") {
-      this.setState({operation: "", total: ""})
+      this.setState({operation: "", total: "", last_op: ""})
     } else if (e.target.name === "CE") {
-      this.setState({operation: ""})
+      this.setState({operation: this.state.last_op})
     } else {
       this.setState({
+        last_op: this.state.operation,
         operation: this.state.operation + e.target.name,
       })
     }
@@ -46,16 +50,10 @@ class Calc extends React.Component {
     return(
       <>
         <div className="calculator">
-          <h1>Calculate</h1>
-          <hr/>
           <form>
             <input type="string" name="number" value={this.state.operation}/>
           </form>
           <Keypad onSubmit={this.handleSubmit} onClick={this.handleOperatorChange}/>
-        </div>
-
-        <div className="logs">
-          <Logs saved={this.state.saved}/>
         </div>
       </>
     )
