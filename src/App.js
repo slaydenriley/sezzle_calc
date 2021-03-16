@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="sezzle-head">
-        <img src="https://media.sezzle.com/branding/2.0/Sezzle_Logo_FullColor.svg"/>
+        <img alt="sezzle" src="https://media.sezzle.com/branding/2.0/Sezzle_Logo_FullColor.svg"/>
         <h1><em>Code Challenge built by Riley Slayden</em></h1>
         <hr className="sezzle-line"/>
       </div>

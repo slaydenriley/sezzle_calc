@@ -12,7 +12,9 @@ class Calc extends React.Component {
     try {
       let operation = this.state.operation
       let total = eval(operation)
-      this.addLog(operation + `=${total}`)
+      let formData = {logs: operation + `=${total}`}
+      console.log(formData)
+      this.addLog(formData)
       this.setState({
         operation: total})
     }
@@ -24,7 +26,16 @@ class Calc extends React.Component {
   }
 
   addLog = (formData) => {
-
+    fetch(`http://localhost:3001/logs`, {
+      headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+      method: 'POST',
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
   }
 
   handleChange = (e) => {
@@ -51,7 +62,7 @@ class Calc extends React.Component {
       <>
         <div className="calculator">
           <form>
-            <input type="string" name="number" value={this.state.operation}/>
+            <input autoComplete="off" type="string" name="number" value={this.state.operation} onChange={this.handleChange}/>
           </form>
           <Keypad onSubmit={this.handleSubmit} onClick={this.handleOperatorChange}/>
         </div>
