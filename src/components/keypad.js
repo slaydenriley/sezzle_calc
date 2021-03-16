@@ -3,7 +3,7 @@ const Keypad = (props) => {
     <div className="keypad">
       <button name="(" onClick={props.onClick}>(</button>
       <button name=")" onClick={props.onClick}>)</button>
-      <button name="CE" onClick={props.onClick}>DE</button>
+      <button name="√" onClick={props.onClick}>√</button>
       <button name="C" onClick={props.onClick}>C</button><br/>
 
 

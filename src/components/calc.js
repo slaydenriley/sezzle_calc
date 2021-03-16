@@ -4,7 +4,7 @@ import Keypad from './keypad'
 class Calc extends React.Component {
   state = {
     operation: "",
-    last_op: ""
+    last_op: [0]
   }
 
   handleSubmit = (e) => {
@@ -13,8 +13,7 @@ class Calc extends React.Component {
       let operation = this.state.operation
       let total = eval(operation)
       let formData = {logs: operation + `=${total}`}
-      console.log(formData)
-      this.addLog(formData)
+      this.props.addLog(formData)
       this.setState({
         operation: total})
     }
@@ -23,19 +22,6 @@ class Calc extends React.Component {
         operation: "Oops, error!"
       })
     }
-  }
-
-  addLog = (formData) => {
-    fetch(`http://localhost:3001/logs`, {
-      headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-      method: 'POST',
-      body: JSON.stringify(formData)
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
   }
 
   handleChange = (e) => {
@@ -47,11 +33,11 @@ class Calc extends React.Component {
   handleOperatorChange = (e) => {
     if (e.target.name === "C") {
       this.setState({operation: "", total: "", last_op: ""})
-    } else if (e.target.name === "CE") {
-      this.setState({operation: this.state.last_op})
+    } else if (e.target.name === "√") {
+      this.setState({operation: Math.sqrt(this.state.operation)})
+      this.handleSubmit(e)
     } else {
       this.setState({
-        last_op: this.state.operation,
         operation: this.state.operation + e.target.name,
       })
     }
