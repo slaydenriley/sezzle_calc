@@ -1,5 +1,12 @@
 @media only screen and (max-width: 600px) {
   .logs, .calculator {
+    margin: 0 auto;
+    margin-top: 20px;
+    filter: drop-shadow(0 0 0.75rem lightgrey);
+    background-color: whitesmoke;
+    padding: 30px 10px;
+    border-radius: 40px;
+    border: 5px solid #44daad;
     width: 100%;
   }
 
