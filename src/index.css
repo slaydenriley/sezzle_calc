@@ -13,15 +13,22 @@
   button {
     border: 1px solid black;
     margin: 2px;
-    width: 10%;
+    width: 20%;
     height: 70px;
     border-radius: 15px;
     background-color: #8333d3;
     color: white;
+    font-size: 40px;
   }
 
   input {
-    width: 80%
+    font-size: 50px;
+    padding: 5px;
+    height: 70px;
+    width: 80%;
+    border-radius: 15px;
+    border: 1px solid black;
+    margin-bottom: 5px;
   }
 }
 
@@ -101,11 +108,6 @@
     text-align: center;
   }
 
-  .log-line {
-    border: 5px solid #fda918;
-    border-radius: 100px;
-  }
-
   .app {
     display: flex;
     flex-wrap: wrap;
@@ -114,16 +116,21 @@
     width: 80%;
     font-family: Tahoma, Geneva, sans-serif;
   }
+}
 
-  .sezzle-head img {
-    width: 20%;
-    display: block;
-    margin: 30px auto;
-  }
+.sezzle-head img {
+  width: 20%;
+  display: block;
+  margin: 30px auto;
+}
 
-  .sezzle-line {
-    border: 5px solid #8333d3;
-    width: 80%;
-    border-radius: 100px;
-  }
+.sezzle-line {
+  border: 5px solid #8333d3;
+  width: 80%;
+  border-radius: 100px;
+}
+
+.log-line {
+  border: 5px solid #fda918;
+  border-radius: 100px;
 }
