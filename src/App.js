@@ -12,13 +12,15 @@ class App extends React.Component {
     time: ''
   }
 
+  baseURL = 'https://slayden-sezzle-backend.herokuapp.com/'
+
   componentDidMount() {
     this.fetchLogs()
   }
 
   fetchLogs = () => {
     let logs = []
-    fetch('http://localhost:3001/logs')
+    fetch(this.baseURL)
       .then(res => res.json())
       .then((log) => {
         logs.push(log.map(log => log.logs))
@@ -28,7 +30,7 @@ class App extends React.Component {
 
   addLog = (formData) => {
     let logs = []
-    fetch(`http://localhost:3001/logs`, {
+    fetch(this.baseURL, {
       headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
