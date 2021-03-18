@@ -3,13 +3,14 @@ import Calc from './components/calc'
 import Logs from './components/logs'
 import React from 'react'
 import Moment from 'moment'
+import { JumpCircleLoading } from 'react-loadingg';
 
 class App extends React.Component {
 
   state = {
     logs: [],
     loading: true,
-    time: ''
+    time: Moment().format("MMM D, YYYY | h:mm:ss a")
   }
 
   logUrl = 'https://slayden-sezzle-backend.herokuapp.com/logs'
@@ -41,7 +42,7 @@ class App extends React.Component {
     .then(res => res.json())
     .then((log) => {
       logs.push(log.map(log => log.logs))
-      this.setState({logs: logs, loading: false, time: (new Date).toString()})
+      this.setState({logs: logs, loading: false, time: Moment().format("MMM D, YYYY | h:mm:ss a")})
     })
   }
 
@@ -52,7 +53,7 @@ class App extends React.Component {
 
   handleLoading = () => {
     if (this.state.loading === true) {
-      return ("Loading...")
+      return <JumpCircleLoading />
     } else {
       return (
         <div className="app">
