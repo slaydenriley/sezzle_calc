@@ -2,12 +2,26 @@ button {
   font-size: 50px;
   border: 1px solid black;
   margin: 2px;
-  width: 100px;
+  width: 24%;
   height: 70px;
   border-radius: 15px;
   background-color: #8333d3;
   color: white;
 }
+
+.refresh-button {
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: #8333d3;
+  color: white;
+  width: 50%;
+  height: 40px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+a {text-decoration: none}
 
 button:focus, input:focus {outline:0;}
 
@@ -33,7 +47,6 @@ body {
 
 .logs, .calculator {
   margin: 0 auto;
-  width: 40%;
   margin-top: 20px;
   filter: drop-shadow(0 0 0.75rem lightgrey);
   background-color: whitesmoke;
@@ -57,12 +70,12 @@ body {
 
 .log-line {
   border: 5px solid #fda918;
-  width: 80%;
   border-radius: 100px;
 }
 
 .app {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 auto 40px;
   justify-content: center;
   width: 80%;
@@ -70,7 +83,7 @@ body {
 }
 
 .sezzle-head img {
-  width: 30%;
+  width: 20%;
   display: block;
   margin: 30px auto;
 }

@@ -33,9 +33,6 @@ class Calc extends React.Component {
   handleOperatorChange = (e) => {
     if (e.target.name === "C") {
       this.setState({operation: "", total: "", last_op: ""})
-    } else if (e.target.name === "√") {
-      this.setState({operation: Math.sqrt(this.state.operation)})
-      this.handleSubmit(e)
     } else {
       this.setState({
         operation: this.state.operation + e.target.name,
@@ -50,6 +47,7 @@ class Calc extends React.Component {
           <form>
             <input autoComplete="off" type="string" name="number" value={this.state.operation} onChange={this.handleChange}/>
           </form>
+          <hr className="log-line"/>
           <Keypad onSubmit={this.handleSubmit} onClick={this.handleOperatorChange}/>
         </div>
       </>

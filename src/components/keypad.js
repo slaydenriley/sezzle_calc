@@ -1,15 +1,15 @@
 const Keypad = (props) => {
   return(
     <div className="keypad">
+      <button name="C" onClick={props.onClick}>C</button>
       <button name="(" onClick={props.onClick}>(</button>
       <button name=")" onClick={props.onClick}>)</button>
-      <button name="√" onClick={props.onClick}>√</button>
-      <button name="C" onClick={props.onClick}>C</button><br/>
+      <button name="/" onClick={props.onClick}>÷</button><br/>
 
 
-      <button name="1" onClick={props.onClick}>1</button>
-      <button name="2" onClick={props.onClick}>2</button>
-      <button name="3" onClick={props.onClick}>3</button>
+      <button name="7" onClick={props.onClick}>7</button>
+      <button name="8" onClick={props.onClick}>8</button>
+      <button name="9" onClick={props.onClick}>9</button>
       <button name="+" onClick={props.onClick}>+</button><br/>
 
 
@@ -18,16 +18,16 @@ const Keypad = (props) => {
       <button name="6" onClick={props.onClick}>6</button>
       <button name="-" onClick={props.onClick}>-</button><br/>
 
-      <button name="7" onClick={props.onClick}>7</button>
-      <button name="8" onClick={props.onClick}>8</button>
-      <button name="9" onClick={props.onClick}>9</button>
+
+      <button name="1" onClick={props.onClick}>1</button>
+      <button name="2" onClick={props.onClick}>2</button>
+      <button name="3" onClick={props.onClick}>3</button>
       <button name="*" onClick={props.onClick}>x</button><br/>
 
-
-      <button name="." onClick={props.onClick}>.</button>
       <button name="0" onClick={props.onClick}>0</button>
-      <button name="=" onClick={props.onSubmit}>=</button>
-      <button name="/" onClick={props.onClick}>÷</button><br/>
+      <button name="." onClick={props.onClick}>.</button>
+      <button name="**2" onClick={props.onClick}>x²</button>
+      <button name="=" onClick={props.onSubmit}>=</button><br/>
     </div>
   )
 }
