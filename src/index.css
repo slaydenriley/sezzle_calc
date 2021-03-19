@@ -18,6 +18,7 @@
     border-radius: 15px;
     background-color: #8333d3;
     color: white;
+    font-size: 20px;
   }
 
   input {
@@ -44,8 +45,6 @@
 
   .app {
     text-align: center;
-    justify-content: center;
-    width: 80%;
     font-family: Tahoma, Geneva, sans-serif;
   }
 }
