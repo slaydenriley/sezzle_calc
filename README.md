@@ -1,4 +1,4 @@
-<div align: "center">
+<div align="center">
   <h1>Sezzle Calculator Coding Challenge 🧮</h1>
   <p><em>Built by Riley Slayden</em></p>
 </div>
